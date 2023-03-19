@@ -195,6 +195,11 @@ function tieneTresDigitos(num) {
    // Tu código:
    if (num >=100 && num < 1000) return true
    return false
+  let i = 0
+   do {num = num +5
+      i++
+   } while (i< 8);
+   return num
 }
 
 function doWhile(num) {
