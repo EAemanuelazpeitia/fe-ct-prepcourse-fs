@@ -33,8 +33,9 @@ function agregarItemAlFinalDelArray(array, elemento) {
    // Agrega el "elemento" al final del arreglo recibido.
    // Retorna el arreglo.
    // Tu código:
-   array.push (elemento)
-   return array
+  array.push (elemento)
+  return array
+   
    
 }
 
@@ -52,15 +53,15 @@ function dePalabrasAFrase(palabras) {
    // con un espacio entre cada palabra.
    // Ejemplo: ['Hello', 'world!'] -> 'Hello world!'.
    // Tu código:
-   //return palabras.join(" ") 
+    return palabras.join(" ") 
    //var sum = ""
    
    //for (var j = 0; j < palabras.length - 1; j++){
    //     sum = sum + palabras[j] + " " 
    //}
   // return sum + palabras.pop()
-  var xen = palabras.join(" ")
-  return xen
+  //var xen = palabras.join(" ")
+  //return xen
 }
 
 function arrayContiene(array, elemento) {
@@ -95,11 +96,17 @@ function numeroMasGrande(arrayOfNums) {
    // El parámetro "arrayOfNums" es un arreglo de números.
    // Retornar el número más grande.
    // Tu código:
-   var hoy = arrayOfNums[0]
-   arrayOfNums.forEach(element => {
-      if (element > hoy) hoy = element
-   });
-   return hoy
+   // var hoy = arrayOfNums[0]
+   // arrayOfNums.forEach(element => {
+   //    if (element > hoy) hoy = element
+   // });
+   // return hoy
+   var res = 0
+   for(i=0;i<arrayOfNums.length;i++){
+      if (arrayOfNums[i]>res){
+      res=arrayOfNums[i]}
+   }
+   return res
 }
 
 
@@ -116,18 +123,38 @@ function multiplicarArgumentos() {
          ho = ho * arguments[i]
    }
    return ho
+//    if (arguments.length===0) return 0
+// if (arguments.length===1)return arguments[0]
+// var fio= arguments.reduce((a,b)=>a*b,1) 
+// return fio
+// if (arguments.length === 0){
+//    return 0
+// }
+// if (arguments.length===1){
+//    return arguments[0]
+// }
+// let gol = arguments.reduce((a,b)=>a*b,1)
+// return gol
 }
 
 function cuentoElementos(array) {
    // Desarrolla una función que retorne la cantidad de elementos del arreglo cuyo valor sea mayor que 18.
    // Tu código:
-   var contador = 0
-   for (i=0;i<array.length;i++){
-      if (array[i]>18){
-         contador ++
-      }
+   // var contador = 0
+   // for (i=0;i<array.length;i++){
+   //    if (array[i]>18){
+   //       contador++
+   //    }
+   // }
+   // return contador
+   let menor = []
+   for ( num of array){
+      if (num > 18){
+         menor.push(num)
+      } 
    }
-   return contador
+   let canti = menor.length 
+    return canti
 }
 
 function diaDeLaSemana(numeroDeDia) {
@@ -148,7 +175,7 @@ function empiezaConNueve(num) {
    // Debe retornar true si el entero inicia con 9 y false en otro caso.
    // Tu código:
    var str = num.toString()
-       if (str[0] === "9")  {return true}
+       if (str[0] == 9)  {return true}
         else {return false}
 }
 
@@ -156,12 +183,17 @@ function todosIguales(array) {
    // Si todos los elementos del arreglo son iguales, retornar true.
    // Caso contrario retornar false.
    // Tu código:
-   var jo = array[0] //[1,1,13,1,1,1,1]
+   // var jo = array[0] //[1,1,13,1,1,1,1]
+   // for (i=1;i<array.length;i++){
+   //  if (jo === array[i]) return true
+   //  else return false
+   // }
+   //var arguments = [1,2,5,6,1]
    for (i=1;i<array.length;i++){
-    if (jo === array[i]) return true
-    else return false
-   }
-   
+    if ( array[0]===array[i])return true
+      else  return false
+    }
+  
 }
 
 function mesesDelAño(array) {
@@ -176,15 +208,16 @@ function mesesDelAño(array) {
       }
    }
    if (meses.length===3){return meses}
-   if (meses.length!==3){return "No se encontraron los meses pedidos"}
-
+   else return "No se encontraron los meses pedidos"
 }
+
+
 function tablaDelSeis() {
    // Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
    // La función devuelve un arreglo con los resultados de la tabla de multiplicar del 6 en orden creciente.
    // Tu código:
    var tabla = []
-   for (i=0;i<=10;i++){
+   for (i=0;i<11;i++){
       tabla.push(i*6)
    }
    return tabla
@@ -215,24 +248,33 @@ function breakStatement(num) {
    // la ejecución y retornar el string: "Se interrumpió la ejecución".
    // [PISTA]: utiliza el statement 'break'.
    // Tu código:
-   var arreglo = []
-   for ( i=0; i<10; i++){
-      num = num + 2
-      if ( num === i){
-         break}
-         else {arreglo.push(num)
-         }
-      }
-      if ( arreglo.length<10){
-         return "Se interrumpió la ejecución"
-      }
-      else {
-         return arreglo
-      }
+   // var arreglo = []
+   // for ( i=0; i<10; i++){
+   //    num = num + 2
+   //    if ( num === i){
+   //       break}
+   //       else {arreglo.push(num)
+   //       }
+   //    }
+   //    if ( arreglo.length<10){
+   //       return "Se interrumpió la ejecución"
+   //    }
+   //    else {
+   //       return arreglo
+   //    }
+   
+   let aumento = []
+   for ( i = 0; i<10;i++){
+      num = num +2
+      if (num === i){break}
+      else {aumento.push(num)}
    }
-
-
-
+   if (aumento.length<10){return "Se interrumpió la ejecución"}
+   else return aumento
+}
+        
+   
+   
 function continueStatement(num) {
    // Iterar en un bucle aumentando en 2 el número recibido hasta un límite de 10 veces.
    // Guardar cada nuevo valor en un array y retornarlo.

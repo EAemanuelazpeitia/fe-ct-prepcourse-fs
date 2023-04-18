@@ -9,9 +9,11 @@ function obtenerMayor(x, y) {
    //   return x
    //} else return y
    //opcion 2
-   if (x<y)return y;
-   if (x>y)return x;
-   return x || y;
+   // if (x<y)return y;
+   // if (x>y)return x;
+   // return x || y;
+   if ( x>= y)return x
+   if (x<y) return y
 }
 
 function mayoriaDeEdad(edad) {
@@ -19,9 +21,7 @@ function mayoriaDeEdad(edad) {
    // Si tiene 18 años ó más debe retornar el string: "Allowed".
    // Caso contrario: "Not allowed".
    // Tu código:
-   // if (edad>=18){
-   //     return "Allowed"
-   // } else return "Not allowed"
+
    if ( edad>=18)return "Allowed"
    return "Not allowed"
 }
@@ -33,11 +33,7 @@ function conection(status) {
    // De lo contrario, presumimos que el usuario está "Offline".
    // Retornar el estado de conexión del usuario.
    // Tu código:
-   //if (status === 1){
-   //   return "Online";
-   //} else if (status === 2){
-     // return "Away";
-   //} else return "Offline";
+
    if (status===1) return "Online"
    if (status===2) return "Away"
    return "Offline"
@@ -60,7 +56,7 @@ function saludo(idioma) {
    if(idioma==="aleman") return "Guten Tag!"
    if(idioma==="mandarin") return "Ni Hao!"
    if(idioma==="ingles")return "Hello!"
-   return "Hola!"
+   else return "Hola!"
 }
 
 function colors(color) {
@@ -95,7 +91,7 @@ function estaEnRango(num) {
    // Retornar true si "num" es menor que 50 y mayor que 20.
    // De lo contrario, retornar false.
    // Tu código:
-   var estaEnRango= 27
+  
    if (num<50 && num>20){
       return true;
    } else return false;
@@ -195,11 +191,12 @@ function tieneTresDigitos(num) {
    // Tu código:
    if (num >=100 && num < 1000) return true
    return false
-  let i = 0
-   do {num = num +5
-      i++
-   } while (i< 8);
-   return num
+//   let i = 0
+//    do {num = num +5
+//       i++
+//    } while (i< 8);
+//    return num
+
 }
 
 function doWhile(num) {
@@ -207,11 +204,15 @@ function doWhile(num) {
    // Retornar el valor final.
    // Utilizar el bucle Do-While.
    // Tu código:
-   let i = 1
-   do { num = num + 5
-      i++  
-} while (i<=8);
-return num;
+//    let i = 0
+//    do { num = num + 5
+//       i = i +1 
+// } while (i<8);
+// return num;
+for ( i = 0; i <8 ; i++){
+   num = num +5
+}
+return num
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
